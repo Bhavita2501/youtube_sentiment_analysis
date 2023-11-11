@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Comments Sentiment Analysis</title>
+</head>
+
+<body>
+    <div style="color:rgb(55, 52, 9)">
+        <form action="{{url_for('fetch_comments')}}" method="post">
+            <h2>Youtube Video Comments Sentiment Analysis of (Top 100 Comments sorted by Relevance)</h2>
+
+            <h4>Youtube Video Link</h4> <input id="url_box" name="url_name" required="required">      
+
+            <br><br><button id="sub" type="submit ">Check the Sentiment</button>
+            <br>
+        </form>
+        <h3>Sentiment Results</h3>
+        <br><br><h3>{{prediction_text|safe}}<h3>
+    </div>
+    <style>
+        body {
+            background-color: rgb(182, 167, 153);
+            text-align: center;
+            padding: 0px;
+        }
+
+        #box {
+            border-radius: 100px;
+            border-color: 50px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(224, 223, 232);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #sub {
+            width: 150px;
+            height: 75px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #url_box {
+            border-radius: 10px;
+            height: 50px;
+            width: 500;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
